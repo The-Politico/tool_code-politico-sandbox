@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://static3.politico.com/resource/assets/battletoads/css/shared--base.min.cc62bc586cca8c0f6659b3f17ed46eae.gz.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://static3.politico.com/resource/assets/battletoads/css/shared--header.min.b7b4231d05cbf1fce18848b54ddd9031.gz.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://static3.politico.com/resource/assets/battletoads/css/shared--footer.min.4e2b31ee297e14a89e4c233d57eb8645.gz.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://static3.politico.com/resource/assets/battletoads/css/shared--article.min.2c0125c8d877a13ac6143c84408cf042.gz.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://static3.politico.com/resource/assets/battletoads/css/shared--utility.min.e66df854ea12e9d55dd4732272b01497.gz.css"
+    />
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div
+      class="page-content page-content--story story-type--core"
+      data-modules="/spring/cms-api/v1/modules?page=00000176-5ea8-d0c3-ab77-7fbb1d350003"
+      data-ad-slot-insertion-interval="1.5"
+      data-ad-slot-first-insertion="1"
+      data-viewport-ad-slot-id="pol-vp"
+    >
+      <section
+        class="page-content__row page-content__row--story is-medium-width"
+      >
+        <div class="container container--story">
+          <div class="container__column container__column--story">
+            <aside class="story-enhancement">
+              <!-- Embed Starts Here -->
+
+              <!-- HTML -->
+              <div class="cabinet-picks">
+                <div class="cabinet-row">
+                  <div class="cab-info">
+                    <img />
+                    <h3 class="cabinet-name">
+                      <strong></strong>
+                    </h3>
+                    <p class="position"></p>
+                  </div>
+                  <div class="hr-rule"></div>
+                  <div class="cab-info">
+                    <img />
+                    <h3 class="cabinet-name">
+                      <strong></strong>
+                    </h3>
+                    <p class="position"></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CSS -->
+              <style>
+                .cabinet-row hr {
+                  border-top: 2px dotted black;
+                  width: 90%;
+                }
+
+                .cabinet-picks {
+                  display: block;
+                  margin-top: -30px;
+                }
+
+                .cabinet-row {
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: row;
+                  padding: 15px;
+                }
+
+                .cab-info {
+                  justify-content: flex-start;
+                  width: 46%;
+                  padding: 20px;
+                  margin: 0 auto 0 auto;
+                }
+
+                .cab-info h3,
+                p {
+                  font-family: "din-2014", "Helvetica Neue", Helvetica, Arial,
+                    sans-serif;
+                }
+
+                .cab-info h3.cabinet-name {
+                  font-weight: 500;
+                  text-align: center;
+                  text-transform: uppercase;
+                  font-size: 1.2rem;
+                  color: black;
+                  margin: 20px auto 5px auto;
+                  display: block;
+                  color: black;
+                }
+
+                .cab-info p {
+                  margin-bottom: 15px;
+                  text-align: left;
+                  font-size: 1rem;
+                  letter-spacing: 0.021rem;
+                  font-weight: 300;
+                  color: black;
+                }
+
+                .cab-info p.position {
+                  width: 100%;
+                  margin: 0px auto 30px auto;
+                  font-size: 1rem;
+                  font-style: italic;
+                  text-align: center;
+                }
+
+                .cab-info strong {
+                  color: #329cac;
+                }
+
+                .cab-info img {
+                  width: 70%;
+                  margin: 0 auto;
+                  display: table;
+                }
+
+                .hr-rule {
+                  border-left: 2px dotted black;
+                  margin: 20px;
+                }
+              </style>
+
+              <!-- JavaScript -->
+              <script>
+                (() => {
+                  const container = document.querySelector(".cabinet-row");
+
+                  fetch(
+                    "https://www.politico.com/interactives/apps/kitchensink/1rO8D3Son399/data.json"
+                  )
+                    .then((resp) => resp.json())
+                    .then((data) => {
+                      const people = data.content.people;
+
+                      const containers = document.querySelectorAll(
+                        ".cabinet-picks .cab-info"
+                      );
+
+                      containers[0]
+                        .querySelector("img")
+                        .setAttribute("src", people[0].Image);
+
+                      containers[0].querySelector("strong").innerHTML =
+                        people[0].Name;
+
+                      containers[0].querySelector("p").innerHTML =
+                        people[0].Title;
+
+                      containers[1]
+                        .querySelector("img")
+                        .setAttribute("src", people[1].Image);
+
+                      containers[1].querySelector("strong").innerHTML =
+                        people[1].Name;
+
+                      containers[1].querySelector("p").innerHTML =
+                        people[1].Title;
+                    });
+                })();
+              </script>
+
+              <!-- Embed Ends Here -->
+            </aside>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
